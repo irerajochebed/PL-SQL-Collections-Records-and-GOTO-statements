@@ -1,8 +1,8 @@
 # PL-SQL-Collections-Records-and-GOTO-statements
  defining a problem that demonstrates PL/SQL Collections, Records, and GOTO statements. 
 
-#PL/SQL Concepts Demonstration: Employee Bonus Management System
-#1. Problem Definition
+# PL/SQL Concepts Demonstration: Employee Bonus Management System
+# 1. Problem Definition
 
 Objective:
 To create a PL/SQL procedure that calculates and assigns year-end bonuses to employees based on their department and performance rating. The system must demonstrate the use of:
@@ -23,13 +23,13 @@ The HR department needs an automated year-end bonus calculator. The bonus is cal
 The procedure should process a list of employees, calculate their individual bonuses, and output the results. If an employee from an unrecognized department is encountered, the logic should skip the calculation and log a message using a GOTO statement
 
 
-#RECORD
+# RECORD
 emp_record_type
 
 A composite data type holding an employee's ID, name, salary, department, rating, and calculated bonus.
 Groups related fields into a single unit. Makes code cleaner and more manageable than using individual variables.
 
-#COLLECTION
+# COLLECTION
 emp_table_type
 (Nested Table)
 
@@ -42,7 +42,7 @@ GOTO skip_calculation
 Used to jump out of the main calculation logic for a specific, known error condition (invalid department).
 Use with extreme caution. It can create "spaghetti code" that is hard to debug and maintain. In 99% of cases, IF-THEN-ELSE or EXCEPTION handling is a better, clearer choice. Here, it's used to demonstrate its functionality in a controlled manner.
 
-#2. Database Setup (Assumed Table Structure)
+# 2. Database Setup (Assumed Table Structure)
 
  -- Example Employee Table Structure (Your actual table might differ)
 CREATE TABLE employees (
@@ -61,7 +61,7 @@ INSERT INTO employees VALUES (4, 'Diana Prince', 90000, 'INVALID_DEPT', 2); -- F
 INSERT INTO employees VALUES (5, 'Edward King', 55000, 'FINANCE', 4);
 COMMIT;
 
-#3. PL/SQL Solution Code
+# 3. PL/SQL Solution Code
 The following anonymous block contains the complete solution.
 
 SET SERVEROUTPUT ON;
@@ -163,7 +163,7 @@ EXCEPTION
 END;
 /
 
-#4. Expected Output & Explanation
+# 4. Expected Output & Explanation
 When executed with the provided sample data, the output will be:
 
 *** EMPLOYEE BONUS CALCULATION REPORT ***
